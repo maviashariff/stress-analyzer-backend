@@ -34,7 +34,7 @@ app.post("/submit", async (req, res) => {
 // Get leaderboard (lowest stress first)
 app.get("/leaderboard", async (req, res) => {
   try {
-    const topResults = await Result.find().sort({ stressScore: 1 }).limit(20);
+    const topResults = await Result.find().sort({ stressScore: 1 }).limit(60);
     res.json(topResults);
   } catch (err) {
     res.status(500).json({ error: err.message });
